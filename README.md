@@ -8,7 +8,7 @@ The analysis was conducted to help stakeholders better understand how customers 
 Following an initial stakeholder meeting, the key areas of interest were identified as:
 - Expected patterns of usage
 - Customer behavior and demand profiles
-- Operational concerns related to **bike availability, station imbalance, and supply chain reliability**
+- Operational concerns related to **bike availability, reliability, and supply chain management**
 
 ---
 
@@ -16,7 +16,7 @@ Following an initial stakeholder meeting, the key areas of interest were identif
 
 - Perform exploratory data analysis on London cycling usage data
 - Analyze **net inflows and outflows of bicycles** at docking stations
-- Identify **cyclical usage patterns** over time
+- Identify **cyclical usage patterns** using spectral analysis
 - Highlight potential operational risks and inefficiencies
 - Provide insights relevant for **investment evaluation**
 
@@ -24,15 +24,42 @@ Following an initial stakeholder meeting, the key areas of interest were identif
 
 ## Data Sources
 
-### 1. Historical Usage Data
-- Multiple CSV files contained in the `Data.zip` folder
-- Includes trip-level information such as:
-  - Start and end stations
-  - Timestamps
-  - Journey durations
+### Historical Usage Data
+- Multiple CSV files located in the `Data` folder
+- Data includes journey-level information across London cycle hire stations
 
-### 2. Live System Data
+### Live System Data
 - Transport for London (TfL) live feed:
-  
-```text
 https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml
+
+
+### Geographic Reference
+- Static London map image used for visualization:
+  - `london_map.png`
+
+---
+
+## Required Packages
+
+The analysis was conducted in **Python** using the following libraries:
+
+### Core Data Handling
+- pandas
+- numpy
+- glob
+- os
+
+### Visualization
+- matplotlib
+- matplotlib.image
+
+### External Data & APIs
+- requests
+- xml.etree.ElementTree
+- io.BytesIO
+
+### Signal Processing
+- scipy.signal (periodogram)
+
+### Utilities
+- warnings
